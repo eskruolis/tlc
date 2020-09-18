@@ -1,0 +1,38 @@
+/*
+ Theme Name:   CustomStrap
+ Theme URI:    https://www.livecanvas.com/customstrap/
+ Description:  A child theme for UnderStrap, bringing some cool options in the Customizer and a built in SCSS compiler to roll your own BootStrap
+ Author:       LiveCanvas.com
+ Author URI:   https://www.livecanvas.com
+ Template:     understrap
+ Version:      2.7.0
+ Text Domain:  customstrap
+ License: GPL-2.0
+ License URI: http://www.opensource.org/licenses/gpl-license.php
+*/
+
+ul.products li.product, .woocommerce-page ul.products li.product {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.woocommerce span.onsale {
+    background-color: #EA9090 !important;
+}
+
+.btn, .wpcf7 input[type=submit] {
+margin: 0;
+padding: 0 12px !important;
+}
