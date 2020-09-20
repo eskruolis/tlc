@@ -11,57 +11,65 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 3.6.0
+ * @author  WooThemes
+ * @package WooCommerce/Templates
+ * @version 3.0.0
  */
 
-defined( 'ABSPATH' ) || exit;
+if ( ! defined('ABSPATH')) {
+	exit; // Exit if accessed directly
+}
 
 global $product;
 
-// Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
+// Ensure visibility
+if (empty($product) || ! $product->is_visible()) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li <?php post_class('col-lg-3 col-md-4 col-sm-6 m-0 p-2'); ?>>
+<div class="card card-product-grid">
+	
 	<?php
 	/**
-	 * Hook: woocommerce_before_shop_loop_item.
+	 * woocommerce_before_shop_loop_item hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
-
+	do_action('woocommerce_before_shop_loop_item');
+	
 	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
+	 * woocommerce_before_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_show_product_loop_sale_flash - 10
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
-
+	do_action('woocommerce_before_shop_loop_item_title');
+	
+	?> <figcaption class="info-wrap"> <?php
 	/**
-	 * Hook: woocommerce_shop_loop_item_title.
+	 * woocommerce_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
+	do_action('woocommerce_shop_loop_item_title');
+	
 	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
+	 * woocommerce_after_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
+	do_action('woocommerce_after_shop_loop_item_title');
+	
 	/**
-	 * Hook: woocommerce_after_shop_loop_item.
+	 * woocommerce_after_shop_loop_item hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_close - 5
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
+	do_action('woocommerce_after_shop_loop_item');
 	?>
+	</figcaption>
+	</div>
 </li>

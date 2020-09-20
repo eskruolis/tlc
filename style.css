@@ -11,22 +11,54 @@
  License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 
-ul.products li.product, .woocommerce-page ul.products li.product {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+#woocommerce-wrapper {
+    background-color: #f8f9fa;
 }
+
+.woocommerce-product-details__short-description {
+    margin-bottom: 1rem;
+}
+
+.custom-control-inline {
+    display: inline-flex !important;
+    margin-right: 1rem;
+}
+
+.custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.input-spinner {
+    width: 120px !important;
+    flex-wrap: nowrap !important;
+    display: inline-flex !important;
+    vertical-align: middle;
+}
+
+
+/* WOOCOMMERCE STYLE TWEAKS  */
+
+.flex-control-thumbs li {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 3px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.flex-control-nav .flex-control-thumbs {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+}
+
+.flex-direction-nav {
+    display: none !important;
+}
+
 
 .woocommerce span.onsale {
     background-color: #EA9090 !important;
@@ -35,4 +67,28 @@ ul.products li.product, .woocommerce-page ul.products li.product {
 .btn, .wpcf7 input[type=submit] {
 margin: 0;
 padding: 0 12px !important;
+}
+
+.quantity input::-webkit-outer-spin-button,
+    .quantity input::-webkit-inner-spin-button {
+        display: none;
+        margin: 0;
+    }
+    .quantity input.qty {
+        appearance: textfield;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    }
+
+.owl-stage img{
+    border-radius: 12px;
+   border: 1px solid #e4e4e4 !important;
+}
+
+.owl-prev, .owl-next span {
+    font-size: 36px !important;
+}
+
+span.onsale {
+    display: none;
 }

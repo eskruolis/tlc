@@ -1,80 +1,241 @@
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+/* ==== BASE STYLES ====*/
 
- 
-// SOME EXPERIMENTS:
-//$navbar-dark-toggler-icon-bg: url('data:image/svg+xml, <svg class="bi bi-app-indicator" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">  <path fill-rule="evenodd" d="M5.5 2A3.5 3.5 0 002 5.5v5A3.5 3.5 0 005.5 14h5a3.5 3.5 0 003.5-3.5V8a.5.5 0 011 0v2.5a4.5 4.5 0 01-4.5 4.5h-5A4.5 4.5 0 011 10.5v-5A4.5 4.5 0 015.5 1H8a.5.5 0 010 1H5.5z" clip-rule="evenodd"/><path d="M16 3a3 3 0 11-6 0 3 3 0 016 0z"/></svg>') !default;
-//$navbar-brand-font-size:            3rem;
+/* ==================== GLOBAL STYLES ======================= */
+// @import url('../fonts/roboto/font.css');
 
+@import url('https://rsms.me/inter/inter.css');
 
+html { font-family: 'Inter', sans-serif; font-size: 15px; }
 
-// A LIST OF VARIABLES FOR YOUR COMFORT. THESE ARE THE ONES THAT ARE NOT ALREADY EXPOSED TO THE CUSTOMIZER //
-
-/*
-
-
-// Navs
-
-$nav-link-padding-y:                .5rem !default;
-$nav-link-padding-x:                1rem !default;
-$nav-link-disabled-color:           $gray-600 !default;
-
-$nav-tabs-border-color:             $gray-300 !default;
-$nav-tabs-border-width:             $border-width !default;
-$nav-tabs-border-radius:            $border-radius !default;
-$nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
-$nav-tabs-link-active-color:        $gray-700 !default;
-$nav-tabs-link-active-bg:           $body-bg !default;
-$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
-
-$nav-pills-border-radius:           $border-radius !default;
-$nav-pills-link-active-color:       $component-active-color !default;
-$nav-pills-link-active-bg:          $component-active-bg !default;
-
-$nav-divider-color:                 $gray-200 !default;
-$nav-divider-margin-y:              $spacer / 2 !default;
+// @supports (font-variation-settings: normal) {
+//   html { font-family: 'Inter var', sans-serif; }
+// }
 
 
 
-// Navbar
+/* ========================
+INCLUDE STYLES AND COMPONENTS
+===================== */
 
-$navbar-padding-y:                  $spacer / 2 !default;
-$navbar-padding-x:                  $spacer !default;
+@import "variables-custom"; 
 
-$navbar-nav-link-padding-x:         .5rem !default;
-
-$navbar-brand-font-size:            $font-size-lg !default;
-// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
-$nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
-$navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
-
-$navbar-toggler-padding-y:          .25rem !default;
-$navbar-toggler-padding-x:          .75rem !default;
-$navbar-toggler-font-size:          $font-size-lg !default;
-$navbar-toggler-border-radius:      $btn-border-radius !default;
-
-$navbar-dark-color:                 rgba($white, .5) !default;
-$navbar-dark-hover-color:           rgba($white, .75) !default;
-$navbar-dark-active-color:          $white !default;
-$navbar-dark-disabled-color:        rgba($white, .25) !default;
-$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
-
-$navbar-light-color:                rgba($black, .5) !default;
-$navbar-light-hover-color:          rgba($black, .7) !default;
-$navbar-light-active-color:         rgba($black, .9) !default;
-$navbar-light-disabled-color:       rgba($black, .3) !default;
-$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-light-toggler-border-color: rgba($black, .1) !default;
-
-$navbar-light-brand-color:                $navbar-light-active-color !default;
-$navbar-light-brand-hover-color:          $navbar-light-active-color !default;
-$navbar-dark-brand-color:                 $navbar-dark-active-color !default;
-$navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
- 
+/* ================== HELPERS  =================== */
+@import "ui-assets/helpers/mixins";
+@import "ui-assets/helpers/helper-classes"; 
+@import "ui-assets/helpers/bg";
+@import "ui-assets/helpers/typography"; 
 
 
+/* ================== SECTIONS =================== */
+@import "ui-assets/sections/header";
+@import "ui-assets/sections/footer";
+@import "ui-assets/sections/sidebar";
 
-*/
+
+/* ================== COMPONENTS =================== */
+@import "ui-assets/components/plugin-styles";
+@import "ui-assets/components/buttons";
+@import "ui-assets/components/items";
+@import "ui-assets/components/lists";
+@import "ui-assets/components/cards-product";
+@import "ui-assets/components/elements.scss";
+@import "ui-assets/components/menu";
+@import "ui-assets/components/forms";
+
+/* ================== PAGES =================== */
+@import "ui-assets/pages/page-account";
+@import "ui-assets/pages/page-base";
+@import "ui-assets/pages/page-home";
+@import "ui-assets/pages/page-detail";
+@import "ui-assets/pages/page-listing";
+@import "ui-assets/pages/page-order";
+
+
+/* ========================
+Bootstrap with custom variables
+=================== */
+// We'll include bootstrap variables to override bootstrap variables,
+
+@import "variables-custom";
+
+// @import "bootstrap-assets/bootstrap";  
+
+
+
+
+@import "variables-custom";
+
+.mobile-block{ display:none }
+
+@media (max-width: 1200px) {
+	/* tablet devices */
+
+}
+
+@media (max-width: 992px) {
+	/* small tablet devices */
+	.slider-main{
+		.item-slide{height:auto}
+	}
+
+	
+
+
+	.table-shopping-cart{
+		tr td:first-child{ width:250px; }
+		 .itemside{
+		 	.info{padding: 0}
+		 	.aside{  display:none; }
+		 }
+
+		
+	}
+	
+}
+
+@media all and (max-width:768px) {   
+	/* mobile devices */
+	.section-header{
+		.search{ margin-top:1rem; margin-bottom: 1rem;}
+	}
+
+	.item-feature{ margin-bottom:20px; }
+
+	.mobile-order-first{ order:-1; }
+	.mobile-order-1{ order:1; }
+	.mobile-order-2{ order:2; }
+	.mobile-order-3{ order:3; }
+
+
+	.mobile-block{ display: block }
+	.section-header{
+		.logo{max-height:40px; width:auto; }
+		.search{ margin-top:1rem; }
+
+	}
+
+	.navbar-expand{
+		.navbar-collapse{
+			flex-direction: column;
+		}
+	}
+
+
+
+
+	
+}
+
+// BOOTSTRAP Override Variables
+
+
+.card{ 
+    .img-wrap{overflow:hidden; }
+}
+
+.icontext{
+    display: inline-flex; align-items: center;  vertical-align: middle;
+    p{ margin-bottom:0; }
+    .text{ width: 100%; line-height:$line-height-sm; color:$dark; }
+    .icon{position:relative;   margin-right:10px; flex-shrink:0; flex-grow:0;}
+    .title{ display:block; margin-bottom:0;} 
+}
+
+.tag{
+  display: inline-block; padding:3px 7px; background:#f2f2f2; border:1px solid #eee; border-radius:3px; margin-top:4px; margin-right: 2px; font-size:85%;
+}
+
+.item-logo{ margin-bottom:20px; text-align:center;
+  img{max-height:65px;}
+}
+
+.notify{
+  position: absolute;
+  top: -4px;  right: -10px;
+  display: inline-block;
+  padding: .25em .6em;
+  font-size: 12px;  line-height: 1;  text-align: center;
+  border-radius: 3rem;  color: #fff;  background-color:$red;
+}
+
+.price{ font-weight: 600; color:$dark; }
+.price-old{color:$text-muted; margin-left:3px; font-size:85%; }
+
+.icon-control{margin-top:5px; float:right; font-size:80%}
+
+.card-header{
+    .title{ margin-bottom:0; line-height:1.5}
+}
+
+.filter-group{ border-bottom:1px solid $border-color;
+  .card-header{border-bottom:0;  }
+  &:last-child{border-bottom:0}
+}
+
+/* ====================== block ==================== */
+.box{
+  padding:20px; background:#fff; 
+  border-radius:$border-radius; border:1px solid $border-color;
+  img{ max-width: 100%;  }
+}
+
+
+/* ================= RATINGS ============== */
+.label-rating{margin-left:7px; display:inline-block; vertical-align:middle}
+
+
+/* rating-list */
+.rating-stars{display:inline-block; vertical-align:middle; list-style:none; margin:0; padding:0; position:relative; 
+    white-space: nowrap; clear:both;
+    i{ font-size:14px; color:#ccc; display:inline;}
+    li{display:block;  text-overflow:clip;  white-space:nowrap; z-index:1; }
+  
+    li.stars-active{z-index:2; position:absolute; top:0; left:0; overflow: hidden;
+        i{color:orange;}
+    }
+}
+
+
+/* ================= TRACKING ============== */
+.tracking-wrap {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    .step {
+      flex-grow: 1;
+      width: 25%;
+      margin-top: -18px;
+      text-align: center;
+      position: relative; }
+    .step::before {
+      height: 7px;
+      position: absolute;
+      content: "";
+      width: 100%;
+      left: 0;
+      top: 18px }
+    .icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      position: relative;
+      border-radius: 100%;
+      background: #ddd; }
+    .text {
+      display: block; margin-top:7px; 
+    }
+    .step.active .icon {
+      background: $primary;
+      color: #fff; }
+    .step.active .text {
+      font-weight: 400;
+      color: #000; }
+    .step.active:before {
+      background: $primary; 
+    }
+}
+
